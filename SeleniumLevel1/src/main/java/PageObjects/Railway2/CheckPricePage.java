@@ -12,7 +12,8 @@ public class CheckPricePage {
     }
 
     //Methods
-    public void goToBookTicketPage(String seatType) {
+    public BookTicketPage goToBookTicketPage(String seatType) {
         this.getBookTicketBtn(seatType).click();
+        return new BookTicketPage();
     }
 }

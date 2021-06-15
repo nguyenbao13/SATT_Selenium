@@ -8,8 +8,9 @@ public class RegisterPage extends GeneralPage {
     //Locators
     private final By PIDInput = By.id("pid");
     private final By registerBtn = By.xpath("//input[@title='Register']");
-    private final By registerErrMsg = By.xpath("//p[@class='message error']");
+    private final By registerErrMsg = By.xpath("//p[.='There're errors in the form. Please correct the errors and try again.']");
     private final By loginLink = By.xpath("//a[.='login']");
+    private final By registerSuccessMsg = By.xpath("//p[.='You\'re here']");
 
     //Elements
     protected WebElement getPIDInput() {
@@ -28,6 +29,10 @@ public class RegisterPage extends GeneralPage {
         return Constant.WEBDRIVER.findElement(loginLink);
     }
 
+    protected WebElement getRegisterSuccessMsg() {
+        return Constant.WEBDRIVER.findElement(registerSuccessMsg);
+    }
+
     //Methods
     public void enterPID(String pid) {
         this.getPIDInput().sendKeys(pid);
@@ -37,11 +42,16 @@ public class RegisterPage extends GeneralPage {
         this.getRegisterBtn().click();
     }
 
-    public void getRegisterErrorMessage() {
-        this.getRegisterErrMsg().getText();
+    public String getRegisterErrorMessage() {
+        return this.getRegisterErrMsg().getText();
     }
 
-    public void goToLoginPage() {
+    public LoginPage goToLoginPageByLink() {
         this.getLoginLink().click();
+        return new LoginPage();
+    }
+
+    public String getRegisterSuccessMessage() {
+        return this.getRegisterSuccessMsg().getText();
     }
 }

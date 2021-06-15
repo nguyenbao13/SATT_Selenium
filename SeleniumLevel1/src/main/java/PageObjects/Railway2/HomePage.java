@@ -4,7 +4,7 @@ import Common.Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class HomePage extends GeneralPage {
+public class HomePage {
     //Locators
     private final By createAccountLink = By.xpath("//a[.='create an account']");
 
@@ -14,7 +14,8 @@ public class HomePage extends GeneralPage {
     }
 
     //Methods
-    public void goToRegisterPage() {
+    public RegisterPage goToCreateAnAccount() {
         this.getCreateAccountLink().click();
+        return new RegisterPage();
     }
 }

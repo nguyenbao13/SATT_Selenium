@@ -71,7 +71,7 @@ public class GeneralPage {
     }
 
     protected WebElement getValidationErrMsg(String field) {
-        By validationErrMsg = By.xpath("//label[@for='"+field+"' and @class='validation-error']");
+        By validationErrMsg = By.xpath("//label[.='"+field+":']/../label[@class='validation-error']");
         return Constant.WEBDRIVER.findElement(validationErrMsg);
     }
 
@@ -130,10 +130,6 @@ public class GeneralPage {
 
     public void goToChangePasswordPage() {
         this.getTabChangePassword().click();
-    }
-
-    public void enterConfirmPassword(String password) {
-        this.getConfirmPasswordInput().sendKeys(password);
     }
 
     public void getValidationErrorMessage(String field) {

@@ -12,7 +12,8 @@ public class TicketPricePage {
     }
 
     //Methods
-    public void goToCheckPricePage(String trainName) {
+    public CheckPricePage goToCheckPricePage(String trainName) {
         this.getCheckPriceLink(trainName).click();
+        return new CheckPricePage();
     }
 }

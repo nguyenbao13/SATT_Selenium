@@ -13,6 +13,7 @@ public class BookTicketPage {
     private final By seatTypeInput = By.xpath("//select[@name='SeatType']");
     private final By ticketAmountInput = By.xpath("//select[@name='TicketAmount']");
     private final By bookTicketButton = By.xpath("//input[@value='Book ticket']");
+    private final By bookSuccessMsg = By.xpath("//h1[.='Ticket Booked Successfully!']");
 
     //Elements
     protected WebElement getDepartDateInput() {
@@ -39,6 +40,10 @@ public class BookTicketPage {
         return Constant.WEBDRIVER.findElement(bookTicketButton);
     }
 
+    protected WebElement getBookSuccessMsg() {
+        return Constant.WEBDRIVER.findElement(bookSuccessMsg);
+    }
+
     //Methods
     public void selectDepartDate(String departDate) {
         Select date = new Select(this.getDepartDateInput());
@@ -56,8 +61,8 @@ public class BookTicketPage {
     }
 
     public void selectSeatType(String seatType) {
-        Select type = new Select(this.getSeatTypeInput());
-        type.selectByVisibleText(seatType);
+        Select seat = new Select(this.getSeatTypeInput());
+        seat.selectByVisibleText(seatType);
     }
 
     public void selectTicketAmount(String ticketAmount) {
@@ -67,5 +72,19 @@ public class BookTicketPage {
 
     public void submitBookTicket() {
         this.getBookTicketButton().click();
+    }
+
+    public BookTicketPage bookTicket(String departDate, String departStation, String arriveStation, String seatType, String ticketAmount) {
+        this.selectDepartDate(departDate);
+        this.selectDepartStation(departStation);
+        this.selectArriveStation(arriveStation);
+        this.selectSeatType(seatType);
+        this.selectTicketAmount(ticketAmount);
+        this.submitBookTicket();
+        return new BookTicketPage();
+    }
+
+    public String getBookSuccessMessage() {
+        return this.getBookSuccessMsg().getText();
     }
 }

@@ -1,7 +1,7 @@
 PageObjects/Railway2/HomePage.java
  PageObjects.Railway2.HomePage
-PageObjects/Railway2/TimetablePage.java
- PageObjects.Railway2.TimetablePage
+PageObjects/Railway2/LoginPage.java
+ PageObjects.Railway2.LoginPage
 Common/Constant/Constant.java
  Common.Constant.Constant
 PageObjects/Railway2/ForgotPasswordPage.java
@@ -10,8 +10,8 @@ PageObjects/Railway2/GeneralPage.java
  PageObjects.Railway2.GeneralPage
 PageObjects/Railway2/MyTicketPage.java
  PageObjects.Railway2.MyTicketPage
-Common/Common/Utilities.java
- Common.Common.Utilities
+TestCases/Railway/LoginTest.java
+ TestCases.Railway.LoginTest
 PageObjects/Railway2/RegisterPage.java
  PageObjects.Railway2.RegisterPage
 PageObjects/Railway2/TicketPricePage.java
@@ -24,7 +24,7 @@ PageObjects/Railway2/ChangePasswordPage.java
  PageObjects.Railway2.ChangePasswordPage
 PageObjects/Railway2/BookTicketPage.java
  PageObjects.Railway2.BookTicketPage
-PageObjects/Railway2/LoginPage.java
- PageObjects.Railway2.LoginPage
-TestCases/Railway/LoginTest.java
- TestCases.Railway.LoginTest
+Common/Common/Utilities.java
+ Common.Common.Utilities
+PageObjects/Railway2/TimetablePage.java
+ PageObjects.Railway2.TimetablePage

@@ -10,6 +10,7 @@ public class LoginPage extends GeneralPage {
     private final By loginBtn = By.xpath("//input[@title='Login']");
     private final By registerLink = By.xpath("//a[.='Registration Page']");
     private final By forgotPasswordLink = By.xpath("//a[.='Forgot Password page']");
+    private final By loginErrMsg = By.xpath("//p[.='There was a problem with your login and/or errors exist in your form.']");
 
     //Elements
     protected WebElement getUserNameInput() {
@@ -28,18 +29,29 @@ public class LoginPage extends GeneralPage {
         return Constant.WEBDRIVER.findElement(forgotPasswordLink);
     }
 
+    protected WebElement getLoginErrMsg() {
+        return Constant.WEBDRIVER.findElement(loginErrMsg);
+    }
+
     //Methods
-    public void login(String username, String password) {
+    public HomePage login(String username, String password) {
         this.getUserNameInput().sendKeys(username);
         this.getPasswordInput().sendKeys(password);
         this.getLoginBtn().click();
+        return new HomePage();
     }
 
-    public void goToRegisterPage() {
+    public RegisterPage goToRegistrationPage() {
         this.getRegisterLink().click();
+        return new RegisterPage();
     }
 
-    public void goToForgotPasswordPage() {
+    public ForgotPasswordPage goToForgotPasswordPage() {
         this.getForgotPasswordLink().click();
+        return new ForgotPasswordPage();
+    }
+
+    public String getLoginErrorMessage() {
+        return this.getLoginErrMsg().getText();
     }
 }

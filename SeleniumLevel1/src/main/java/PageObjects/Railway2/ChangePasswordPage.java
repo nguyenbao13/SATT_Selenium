@@ -9,6 +9,8 @@ public class ChangePasswordPage extends GeneralPage{
     private final By currentPasswordInput = By.id("currentPassword");
     private final By newPasswordInput = By.id("newPassword");
     private final By changePasswordBtn = By.xpath("//input[@title='Change password']");
+    private final By changePassSuccessMsg = By.xpath("//p[.='Your password has been updated!']");
+    private final By changePassErrMsg = By.xpath("//p[.='Password change failed. Please correct the errors and try again.']");
 
     //Elements
     protected WebElement getCurrentPasswordInput() {
@@ -23,16 +25,28 @@ public class ChangePasswordPage extends GeneralPage{
         return Constant.WEBDRIVER.findElement(changePasswordBtn);
     }
 
+    protected WebElement getChangePassSuccessMsg() {
+        return Constant.WEBDRIVER.findElement(changePassSuccessMsg);
+    }
+
+    protected WebElement getChangePassErrMsg() {
+        return Constant.WEBDRIVER.findElement(changePassErrMsg);
+    }
+
     //Methods
-    public void enterCurrentPassword(String password) {
-        this.getCurrentPasswordInput().sendKeys(password);
-    }
-
-    public void enterNewPassword(String password) {
-        this.getNewPasswordInput().sendKeys(password);
-    }
-
-    public void submitChangePassword() {
+    public ChangePasswordPage changePassword(String current, String newPassword, String confirm) {
+        this.getCurrentPasswordInput().sendKeys(current);
+        this.getNewPasswordInput().sendKeys(newPassword);
+        super.getConfirmPasswordInput().sendKeys(confirm);
         this.getChangePasswordBtn().click();
+        return new ChangePasswordPage();
+    }
+
+    public String getChangePassSuccessMessage() {
+        return this.getChangePassSuccessMsg().getText();
+    }
+
+    public String getChangePassErrorMessage() {
+        return this.getChangePassErrMsg().getText();
     }
 }

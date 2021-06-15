@@ -17,12 +17,14 @@ public class TimetablePage {
     }
 
     //Methods
-    public void goToCheckPricePage(String departStation, String arriveStation) {
+    public CheckPricePage goToCheckPricePage(String departStation, String arriveStation) {
         this.getCheckPriceLink(departStation, arriveStation).click();
+        return new CheckPricePage();
     }
 
-    public void goToBookTicketPage(String departStation, String arriveStation) {
+    public BookTicketPage goToBookTicketPage(String departStation, String arriveStation) {
         this.getBookTicketLink(departStation, arriveStation).click();
+        return new BookTicketPage();
     }
 }
 
