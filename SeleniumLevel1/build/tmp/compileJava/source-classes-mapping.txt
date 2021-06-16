@@ -10,12 +10,12 @@ PageObjects/Railway2/GeneralPage.java
  PageObjects.Railway2.GeneralPage
 PageObjects/Railway2/MyTicketPage.java
  PageObjects.Railway2.MyTicketPage
-TestCases/Railway/LoginTest.java
- TestCases.Railway.LoginTest
 PageObjects/Railway2/RegisterPage.java
  PageObjects.Railway2.RegisterPage
 PageObjects/Railway2/TicketPricePage.java
  PageObjects.Railway2.TicketPricePage
+TestCases/Railway2/LoginTest.java
+ TestCases.Railway2.LoginTest
 PageObjects/Railway2/CheckPricePage.java
  PageObjects.Railway2.CheckPricePage
 PageObjects/Railway2/ContactPage.java
@@ -26,5 +26,7 @@ PageObjects/Railway2/BookTicketPage.java
  PageObjects.Railway2.BookTicketPage
 Common/Common/Utilities.java
  Common.Common.Utilities
+TestCases/Railway2/BookTicketTest.java
+ TestCases.Railway2.BookTicketTest
 PageObjects/Railway2/TimetablePage.java
  PageObjects.Railway2.TimetablePage

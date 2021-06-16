@@ -1,4 +1,4 @@
-package TestCases.Railway;
+package TestCases.Railway2;
 
 import Common.Constant.Constant;
 import PageObjects.Railway2.GeneralPage;
@@ -31,11 +31,9 @@ public class LoginTest {
         GeneralPage generalPage = new GeneralPage();
         generalPage.open();
 
-        generalPage.goToLoginPage();
-        LoginPage loginPage = new LoginPage();
+        LoginPage loginPage = generalPage.goToLoginPage();
 
-        loginPage.login(Constant.USERNAME, Constant.PASSWORD);
-        String actualMsg = generalPage.getWelcomeMessage();
+        String actualMsg = loginPage.login(Constant.USERNAME, Constant.PASSWORD).getWelcomeMessage();
         String expectedMsg = "Welcome " + Constant.USERNAME;
 
         Assert.assertEquals(actualMsg, expectedMsg, "Welcome message is not displayed as expected");

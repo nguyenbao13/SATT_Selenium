@@ -84,63 +84,61 @@ public class GeneralPage {
     }
 
     //Methods
-    public void open() {
+    public HomePage open() {
         Constant.WEBDRIVER.get(Constant.RAILWAY_URL);
+        return new HomePage();
     }
 
     public String getWelcomeMessage() {
         return this.getWelcomeMsg().getText();
     }
 
-    public void goToLoginPage() {
+    public LoginPage goToLoginPage() {
         this.getTabLogin().click();
+        return new LoginPage();
     }
 
     public void logout() {
         this.getTabLogout().click();
     }
 
-    public void goToContactPage() {
+    public ContactPage goToContactPage() {
         this.getTabContact().click();
+        return new ContactPage();
     }
 
-    public void goToTimetablePage() {
+    public TimetablePage goToTimetablePage() {
         this.getTabTimetable().click();
+        return new TimetablePage();
     }
 
-    public void goToTicketPricePage() {
+    public TicketPricePage goToTicketPricePage() {
         this.getTabTicketPrice().click();
+        return new TicketPricePage();
     }
 
-    public void goToBookTicketPage() {
+    public BookTicketPage goToBookTicketPage() {
         this.getTabBookTicket().click();
+        return new BookTicketPage();
     }
 
-    public void goToRegisterPage() {
+    public RegisterPage goToRegisterPage() {
         this.getTabRegister().click();
+        return new RegisterPage();
     }
 
-    public void goToHomePage() {
+    public HomePage goToHomePage() {
         this.getTabHome().click();
+        return new HomePage();
     }
 
-    public void goToMyTicketPage() {
+    public MyTicketPage goToMyTicketPage() {
         this.getTabMyTicket().click();
+        return new MyTicketPage();
     }
 
-    public void goToChangePasswordPage() {
+    public ChangePasswordPage goToChangePasswordPage() {
         this.getTabChangePassword().click();
-    }
-
-    public void getValidationErrorMessage(String field) {
-        this.getValidationErrMsg(field).getText();
-    }
-
-    public void enterEmail(String email) {
-        this.getEmailInput().sendKeys(email);
-    }
-
-    public void enterPassword(String password) {
-        this.getPasswordInput().sendKeys(password);
+        return new ChangePasswordPage();
     }
 }
