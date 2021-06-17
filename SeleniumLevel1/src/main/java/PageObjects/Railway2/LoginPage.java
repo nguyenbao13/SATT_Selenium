@@ -2,6 +2,7 @@ package PageObjects.Railway2;
 
 import Common.Constant.Constant;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class LoginPage extends GeneralPage {
@@ -10,7 +11,7 @@ public class LoginPage extends GeneralPage {
     private final By loginBtn = By.xpath("//input[@title='Login']");
     private final By registerLink = By.xpath("//a[.='Registration Page']");
     private final By forgotPasswordLink = By.xpath("//a[.='Forgot Password page']");
-    private final By loginErrMsg = By.xpath("//p[.='There was a problem with your login and/or errors exist in your form.']");
+    private final By loginErrMsg = By.xpath("//p[@class='message error LoginForm']");
 
     //Elements
     protected WebElement getUserNameInput() {
@@ -34,11 +35,11 @@ public class LoginPage extends GeneralPage {
     }
 
     //Methods
-    public HomePage login(String username, String password) {
+    public LoginPage login(String username, String password) {
+        this.getUserNameInput().clear();
         this.getUserNameInput().sendKeys(username);
-        this.getPasswordInput().sendKeys(password);
-        this.getLoginBtn().click();
-        return new HomePage();
+        this.getPasswordInput().sendKeys(password, Keys.ENTER);
+        return new LoginPage();
     }
 
     public RegisterPage goToRegistrationPage() {

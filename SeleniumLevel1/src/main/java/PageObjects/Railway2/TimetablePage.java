@@ -2,6 +2,7 @@ package PageObjects.Railway2;
 
 import Common.Constant.Constant;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 public class TimetablePage {
@@ -22,7 +23,9 @@ public class TimetablePage {
         return new CheckPricePage();
     }
 
-    public BookTicketPage goToBookTicketPage(String departStation, String arriveStation) {
+    public BookTicketPage goToBookTicketPageByLink(String departStation, String arriveStation) {
+        JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
+        js.executeScript("arguments[0].scrollIntoView();", this.getBookTicketLink(departStation, arriveStation));
         this.getBookTicketLink(departStation, arriveStation).click();
         return new BookTicketPage();
     }

@@ -2,6 +2,7 @@ package PageObjects.Railway2;
 
 import Common.Constant.Constant;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 public class GeneralPage {
@@ -141,4 +142,23 @@ public class GeneralPage {
         this.getTabChangePassword().click();
         return new ChangePasswordPage();
     }
+
+    public String getValidationErrorMessage(String field) {
+        return this.getValidationErrMsg(field).getText();
+    }
+
+    public Boolean checkMyTicketTabExists() {
+        return this.getTabMyTicket().isDisplayed();
+    }
+
+    public Boolean checkChangePasswordTabExists() {
+        return this.getTabChangePassword().isDisplayed();
+    }
+
+    public Boolean checkLogoutTabExists() {
+        return this.getTabLogout().isDisplayed();
+    }
+//    public void enterEmail(String email) {
+//        this.getEmailInput().sendKeys(email);
+//    }
 }

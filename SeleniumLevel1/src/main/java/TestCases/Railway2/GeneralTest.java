@@ -18,8 +18,9 @@ public class GeneralTest {
         generalPage.open();
     }
 
-    @AfterClass
-    public void afterClass() {
-
-    }
+//    @AfterClass
+//    public void afterClass() {
+//        generalPage.logout();
+//        Constant.WEBDRIVER.quit();
+//    }
 }

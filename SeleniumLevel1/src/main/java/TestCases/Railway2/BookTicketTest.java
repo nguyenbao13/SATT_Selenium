@@ -3,21 +3,18 @@ package TestCases.Railway2;
 import Common.Constant.Constant;
 import PageObjects.Railway2.BookTicketPage;
 import PageObjects.Railway2.GeneralPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class BookTicketTest {
-    GeneralPage generalPage = new GeneralPage();
+public class BookTicketTest extends GeneralTest{
+    private GeneralPage generalPage = new GeneralPage();
+    private BookTicketPage bookTicketPage = new BookTicketPage();
 
     @BeforeMethod
     public void beforeMethod() {
-        WebDriverManager.chromedriver().setup();
-        Constant.WEBDRIVER = new ChromeDriver();
-        Constant.WEBDRIVER.manage().window().maximize();
-        generalPage.open().goToLoginPage().login(Constant.USERNAME, Constant.PASSWORD);
+        generalPage.goToLoginPage().login(Constant.USERNAME, Constant.PASSWORD);
+        generalPage.goToBookTicketPage();
     }
 
 //    @AfterMethod
@@ -26,10 +23,13 @@ public class BookTicketTest {
 //    }
 
     @Test
-    public void bookTicket() {
-        BookTicketPage bookTicketPage = generalPage.goToBookTicketPage();
-        bookTicketPage.bookTicket("6/20/2021","Đà Nẵng", "Huế", "Soft bed", "3");
+    public void TC14() {
+        System.out.println("User can book 1 ticket at a time");
+
+        bookTicketPage.bookTicket("6/26/2021","Sài Gòn", "Nha Trang", "Soft bed with air conditioner", "1");
         String actualMsg = bookTicketPage.getBookSuccessMessage();
-        System.out.print(actualMsg);
+        String expectedMsg = "Ticket Booked Successfully!";
+
+        Assert.assertEquals(actualMsg, expectedMsg, "Book ticket success message is not displayed as expected");
     }
 }

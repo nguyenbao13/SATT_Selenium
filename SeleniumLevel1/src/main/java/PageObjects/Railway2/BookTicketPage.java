@@ -1,19 +1,23 @@
 package PageObjects.Railway2;
 
 import Common.Constant.Constant;
+import net.bytebuddy.implementation.bind.annotation.Super;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class BookTicketPage {
+public class BookTicketPage extends GeneralPage{
     //Locators
     private final By departDateInput = By.xpath("//label[.='Depart date:']/../select[@name='Date']");
     private final By departStationInput = By.xpath("//select[@name='DepartStation']");
+    private final By departStationSelected = By.xpath("//select[@name='DepartStation']/option[@selected='selected']");
     private final By arriveStationInput = By.xpath("//select[@name='ArriveStation']");
+    private final By arriveStationSelected = By.xpath("//select[@name='ArriveStation']/option[@selected='selected']");
     private final By seatTypeInput = By.xpath("//select[@name='SeatType']");
     private final By ticketAmountInput = By.xpath("//select[@name='TicketAmount']");
     private final By bookTicketButton = By.xpath("//input[@value='Book ticket']");
-    private final By bookSuccessMsg = By.xpath("//h1[.='Ticket Booked Successfully!']");
+    private final By bookSuccessMsg = By.xpath("//div[@id='content']/h1");
 
     //Elements
     protected WebElement getDepartDateInput() {
@@ -80,11 +84,21 @@ public class BookTicketPage {
         this.selectArriveStation(arriveStation);
         this.selectSeatType(seatType);
         this.selectTicketAmount(ticketAmount);
+        JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
+        js.executeScript("arguments[0].scrollIntoView();", this.getBookTicketButton());
         this.submitBookTicket();
         return new BookTicketPage();
     }
 
     public String getBookSuccessMessage() {
         return this.getBookSuccessMsg().getText();
+    }
+
+    public String getDepartStationSelected() {
+        return Constant.WEBDRIVER.findElement(departStationSelected).getText();
+    }
+
+    public String getArriveStationSelected() {
+        return Constant.WEBDRIVER.findElement(arriveStationSelected).getText();
     }
 }

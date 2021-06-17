@@ -2,6 +2,7 @@ package PageObjects.Railway2;
 
 import Common.Constant.Constant;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class ChangePasswordPage extends GeneralPage{
@@ -9,8 +10,8 @@ public class ChangePasswordPage extends GeneralPage{
     private final By currentPasswordInput = By.id("currentPassword");
     private final By newPasswordInput = By.id("newPassword");
     private final By changePasswordBtn = By.xpath("//input[@title='Change password']");
-    private final By changePassSuccessMsg = By.xpath("//p[.='Your password has been updated!']");
-    private final By changePassErrMsg = By.xpath("//p[.='Password change failed. Please correct the errors and try again.']");
+    private final By changePassSuccessMsg = By.xpath("//p[@class='message success']");
+    private final By changePassErrMsg = By.xpath("//p[@class='message error']");
 
     //Elements
     protected WebElement getCurrentPasswordInput() {
@@ -34,11 +35,10 @@ public class ChangePasswordPage extends GeneralPage{
     }
 
     //Methods
-    public ChangePasswordPage changePassword(String current, String newPassword, String confirm) {
+    public ChangePasswordPage changePassword(String current, String newPassword, String confirmPass) {
         this.getCurrentPasswordInput().sendKeys(current);
         this.getNewPasswordInput().sendKeys(newPassword);
-        super.getConfirmPasswordInput().sendKeys(confirm);
-        this.getChangePasswordBtn().click();
+        super.getConfirmPasswordInput().sendKeys(confirmPass, Keys.ENTER);
         return new ChangePasswordPage();
     }
 
