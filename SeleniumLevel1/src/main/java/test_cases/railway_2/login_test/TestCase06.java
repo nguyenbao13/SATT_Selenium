@@ -66,6 +66,9 @@ public class TestCase06 extends BaseTest {
                     MediaEntityBuilder.createScreenCaptureFromBase64String(Utilities.getScreenshot()).build());
         }
 
+        Assert.assertTrue(myTicket, "My ticket tab is not displayed as expected");
+        Assert.assertTrue(changePassword, "Change password tab is not displayed as expected");
+        Assert.assertTrue(logout, "Logout tab is not displayed as expected");
         Assert.assertEquals(actualMyTicketTitle, expectedMyTicketTitle, "My ticket page is not displayed as expected");
         Assert.assertEquals(actualChangePasswordTitle, expectedChangePasswordTitle, "Change password page is not displayed as expected");
     }

@@ -6,7 +6,7 @@
 
     <test name="selenium1">
 
-        <parameter name="browser" value="edge" />
+        <parameter name="browser" value="firefox" />
 
         <classes>
 

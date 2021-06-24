@@ -18,5 +18,5 @@ public class Constant {
     public static String BOOK_DATE = new SimpleDateFormat("M/dd/yyyy").format(new Date());
     public static String DEPART_DATE = new SimpleDateFormat("M/dd/yyyy").format(new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 4)));
     public static ExtentReports EXTENT = new ExtentReports();
-    public static ExtentSparkReporter SPARK = new ExtentSparkReporter("resources/output/report/railway_2.html");
+    public static ExtentSparkReporter SPARK = new ExtentSparkReporter("resources/output/report/railway_2_firefox.html");
 }

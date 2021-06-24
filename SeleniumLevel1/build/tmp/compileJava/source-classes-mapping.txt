@@ -1,13 +1,9 @@
-common/Constant/Constant.java
- common.Constant.Constant
-common/Common/Utilities.java
- common.Common.Utilities
 page_objects/railway_2/BookTicketPage.java
  page_objects.railway_2.BookTicketPage
-test_cases/railway_2/BaseTest.java
- test_cases.railway_2.BaseTest
-page_objects/railway_2/LoginPage.java
- page_objects.railway_2.LoginPage
+test_cases/railway_2/book_ticket_test/TestCase14.java
+ test_cases.railway_2.book_ticket_test.TestCase14
+test_cases/railway_2/change_password_test/TestCase09.java
+ test_cases.railway_2.change_password_test.TestCase09
 page_objects/railway_2/GeneralPage.java
  page_objects.railway_2.GeneralPage
 page_objects/railway_2/ChangePasswordPage.java
@@ -16,31 +12,35 @@ page_objects/railway_2/TimetablePage.java
  page_objects.railway_2.TimetablePage
 page_objects/railway_2/RegisterPage.java
  page_objects.railway_2.RegisterPage
-page_objects/railway_2/MyTicketPage.java
- page_objects.railway_2.MyTicketPage
-test_cases/railway_2/login_test/TestCase06.java
- test_cases.railway_2.login_test.TestCase06
-test_cases/railway_2/login_test/TestCase04.java
- test_cases.railway_2.login_test.TestCase04
-test_cases/railway_2/book_ticket_test/TestCase14.java
- test_cases.railway_2.book_ticket_test.TestCase14
-test_cases/railway_2/login_test/TestCase01.java
- test_cases.railway_2.login_test.TestCase01
-test_cases/railway_2/my_ticket_test/TestCase16.java
- test_cases.railway_2.my_ticket_test.TestCase16
-test_cases/railway_2/change_password_test/TestCase09.java
- test_cases.railway_2.change_password_test.TestCase09
-test_cases/railway_2/login_test/TestCase05.java
- test_cases.railway_2.login_test.TestCase05
 test_cases/railway_2/login_test/TestCase03.java
  test_cases.railway_2.login_test.TestCase03
 test_cases/railway_2/register_test/TestCase07.java
  test_cases.railway_2.register_test.TestCase07
+test_cases/railway_2/login_test/TestCase06.java
+ test_cases.railway_2.login_test.TestCase06
+test_cases/railway_2/register_test/TestCase10.java
+ test_cases.railway_2.register_test.TestCase10
+test_cases/railway_2/login_test/TestCase04.java
+ test_cases.railway_2.login_test.TestCase04
+page_objects/railway_2/MyTicketPage.java
+ page_objects.railway_2.MyTicketPage
+test_cases/railway_2/login_test/TestCase01.java
+ test_cases.railway_2.login_test.TestCase01
+test_cases/railway_2/my_ticket_test/TestCase16.java
+ test_cases.railway_2.my_ticket_test.TestCase16
+common/Common/Utilities.java
+ common.Common.Utilities
+common/Constant/Constant.java
+ common.Constant.Constant
+page_objects/railway_2/LoginPage.java
+ page_objects.railway_2.LoginPage
+test_cases/railway_2/login_test/TestCase05.java
+ test_cases.railway_2.login_test.TestCase05
 test_cases/railway_2/register_test/TestCase11.java
  test_cases.railway_2.register_test.TestCase11
 test_cases/railway_2/timetable_test/TestCase15.java
  test_cases.railway_2.timetable_test.TestCase15
-test_cases/railway_2/register_test/TestCase10.java
- test_cases.railway_2.register_test.TestCase10
+test_cases/railway_2/BaseTest.java
+ test_cases.railway_2.BaseTest
 test_cases/railway_2/login_test/TestCase02.java
  test_cases.railway_2.login_test.TestCase02
