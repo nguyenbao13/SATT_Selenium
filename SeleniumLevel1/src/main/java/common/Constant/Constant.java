@@ -16,7 +16,7 @@ public class Constant {
     public static final String NEW_PASSWORD = System.getenv("NEW_PASSWORD");
     public static String REGISTER_NAME = Instant.ofEpochSecond(Instant.now().getEpochSecond()) + "@yo.lo";
     public static String BOOK_DATE = new SimpleDateFormat("M/dd/yyyy").format(new Date());
-    public static String DEPART_DATE = new SimpleDateFormat("M/dd/yyyy").format(new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 4)));
+    public static String DEPART_DATE = new SimpleDateFormat("M/d/yyyy").format(new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 4)));
     public static ExtentReports EXTENT = new ExtentReports();
-    public static ExtentSparkReporter SPARK = new ExtentSparkReporter("resources/output/report/railway_2_firefox.html");
+    public static ExtentSparkReporter SPARK = new ExtentSparkReporter("resources/output/report/railway_2.html");
 }

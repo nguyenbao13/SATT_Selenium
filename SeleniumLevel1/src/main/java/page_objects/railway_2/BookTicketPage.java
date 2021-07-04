@@ -4,6 +4,8 @@ import common.Common.Utilities;
 import common.Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 
 public class BookTicketPage extends GeneralPage{
     //Locators
@@ -50,6 +52,11 @@ public class BookTicketPage extends GeneralPage{
     public void bookTicket(String departDate, String departStation, String arriveStation, String seatType, String ticketAmount) {
         Utilities.selectDropdownItem(getDepartDateInput(), departDate);
         Utilities.selectDropdownItem(getDepartStationInput(), departStation);
+        try {
+            Thread.sleep(500); //Wait for arrive list reloads
+        } catch(InterruptedException e) {
+            System.out.println("got interrupted!");
+        }
         Utilities.selectDropdownItem(getArriveStationInput(), arriveStation);
         Utilities.selectDropdownItem(getSeatTypeInput(), seatType);
         Utilities.selectDropdownItem(getTicketAmountInput(), ticketAmount);

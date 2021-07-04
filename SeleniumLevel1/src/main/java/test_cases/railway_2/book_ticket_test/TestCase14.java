@@ -25,7 +25,7 @@ public class TestCase14 extends BaseTest {
         BookTicketPage bookTicketPage = generalPage.goToBookTicketPage();
         test.log(Status.INFO, "3. Click on \"Book ticket\" tab");
 
-        bookTicketPage.bookTicket(Constant.DEPART_DATE,"Sài Gòn", "Nha Trang", "Soft bed with air conditioner", "1");
+        bookTicketPage.bookTicket(Constant.DEPART_DATE,"Đà Nẵng", "Huế", "Soft bed with air conditioner", "1");
         test.log(Status.INFO, "4. Select a \"Depart date\" from the list");
         test.log(Status.INFO, "5. Select \"Sài Gòn\" for \"Depart from\" and \"Nha Trang\" for \"Arrive at\".");
         test.log(Status.INFO, "6. Select \"Soft bed with air conditioner\" for \"Seat type\"");

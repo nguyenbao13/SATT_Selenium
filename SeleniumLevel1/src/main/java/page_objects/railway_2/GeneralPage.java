@@ -10,6 +10,7 @@ public class GeneralPage {
     private final By confirmPasswordInput = By.id("confirmPassword");
     private final By emailInput = By.id("email");
     private final By passwordInput = By.id("password");
+    private final By logoutTab = By.xpath("//a[@href='/Account/Logout']");
 
     //Elements
     protected WebElement getTabMenuItem(String item) {
@@ -35,6 +36,10 @@ public class GeneralPage {
 
     protected WebElement getPasswordInput() {
         return Constant.WEBDRIVER.findElement(passwordInput);
+    }
+
+    protected WebElement getLogoutTab() {
+        return Constant.WEBDRIVER.findElement(logoutTab);
     }
 
     //Methods
@@ -74,6 +79,10 @@ public class GeneralPage {
     public ChangePasswordPage goToChangePasswordPage() {
         this.getTabMenuItem("Change password").click();
         return new ChangePasswordPage();
+    }
+
+    public void logout() {
+        getLogoutTab().click();
     }
 
     public String getValidationErrorMessage(String field) {

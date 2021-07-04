@@ -1,3 +1,9 @@
+data_objects/DataProviderClass.java
+ data_objects.DataProviderClass
+common/Common/Utilities.java
+ common.Common.Utilities
+common/Constant/Constant.java
+ common.Constant.Constant
 page_objects/railway_2/BookTicketPage.java
  page_objects.railway_2.BookTicketPage
 test_cases/railway_2/book_ticket_test/TestCase14.java
@@ -28,10 +34,6 @@ test_cases/railway_2/login_test/TestCase01.java
  test_cases.railway_2.login_test.TestCase01
 test_cases/railway_2/my_ticket_test/TestCase16.java
  test_cases.railway_2.my_ticket_test.TestCase16
-common/Common/Utilities.java
- common.Common.Utilities
-common/Constant/Constant.java
- common.Constant.Constant
 page_objects/railway_2/LoginPage.java
  page_objects.railway_2.LoginPage
 test_cases/railway_2/login_test/TestCase05.java
@@ -42,5 +44,7 @@ test_cases/railway_2/timetable_test/TestCase15.java
  test_cases.railway_2.timetable_test.TestCase15
 test_cases/railway_2/BaseTest.java
  test_cases.railway_2.BaseTest
+test_cases/railway_2/book_ticket_test/TestCase17.java
+ test_cases.railway_2.book_ticket_test.TestCase17
 test_cases/railway_2/login_test/TestCase02.java
  test_cases.railway_2.login_test.TestCase02

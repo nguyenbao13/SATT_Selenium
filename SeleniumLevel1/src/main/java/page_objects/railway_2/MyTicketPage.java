@@ -36,4 +36,8 @@ public class MyTicketPage {
                 arriveStation + "']/../td[.='" + seatType + "']/../td[.='" + departDate + "']/../td[.='" +
                 bookDate + "']/following-sibling::td[.='" + amount + "']/..//input[@value='Cancel']")).size();
     }
+
+    public int getTicketAmount() {
+        return Constant.WEBDRIVER.findElements(By.xpath("//table[@class='MyTable']//tr")).size() - 1;
+    }
 }

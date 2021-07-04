@@ -6,23 +6,24 @@
 
     <test name="selenium1">
 
-        <parameter name="browser" value="firefox" />
+        <parameter name="browser" value="chrome" />
 
         <classes>
 
-            <class name="test_cases.railway_2.login_test.TestCase01"/>
-            <class name="test_cases.railway_2.login_test.TestCase02"/>
-            <class name="test_cases.railway_2.login_test.TestCase03"/>
-            <class name="test_cases.railway_2.login_test.TestCase04"/>
-            <class name="test_cases.railway_2.login_test.TestCase05"/>
-            <class name="test_cases.railway_2.login_test.TestCase06"/>
-            <class name="test_cases.railway_2.register_test.TestCase07"/>
-            <class name="test_cases.railway_2.change_password_test.TestCase09"/>
-            <class name="test_cases.railway_2.register_test.TestCase10"/>
-            <class name="test_cases.railway_2.register_test.TestCase11"/>
-            <class name="test_cases.railway_2.book_ticket_test.TestCase14"/>
-            <class name="test_cases.railway_2.timetable_test.TestCase15"/>
-            <class name="test_cases.railway_2.my_ticket_test.TestCase16"/>
+<!--            <class name="test_cases.railway_2.login_test.TestCase01"/>-->
+<!--            <class name="test_cases.railway_2.login_test.TestCase02"/>-->
+<!--            <class name="test_cases.railway_2.login_test.TestCase03"/>-->
+<!--            <class name="test_cases.railway_2.login_test.TestCase04"/>-->
+<!--            <class name="test_cases.railway_2.login_test.TestCase05"/>-->
+<!--            <class name="test_cases.railway_2.login_test.TestCase06"/>-->
+<!--            <class name="test_cases.railway_2.register_test.TestCase07"/>-->
+<!--            <class name="test_cases.railway_2.change_password_test.TestCase09"/>-->
+<!--            <class name="test_cases.railway_2.register_test.TestCase10"/>-->
+<!--            <class name="test_cases.railway_2.register_test.TestCase11"/>-->
+<!--            <class name="test_cases.railway_2.book_ticket_test.TestCase14"/>-->
+<!--            <class name="test_cases.railway_2.timetable_test.TestCase15"/>-->
+<!--            <class name="test_cases.railway_2.my_ticket_test.TestCase16"/>-->
+            <class name="test_cases.railway_2.book_ticket_test.TestCase17"/>
 
         </classes>
 
